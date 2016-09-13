@@ -28,29 +28,32 @@ A = [[1, 3], [2, 7]]
 a = [0, 1]
 b = [3, 4]
 eps = 0.1
+l1 = 1
+l0 = 2
 
-print(grad(a, b, A, eps))
-print(L(a, b, A))
-
-
-
-#todo
-'''
-l0 = 1000
-l1 = L(a, b, A)
-eps = 0.01
-
-while (eps != 0) and (l1 != 0):
+while (eps > 0) and (l1 != l0):
 	eps /= 2
-	a = [0, 1]
-	b = [3, 4]
+	l0 = 1000
 	l1 = L(a, b, A)
-	print(eps)
-	while (l1 != 0) and (l1 != l0) and (l1 < l0):
-		print(l1, l0, a, b)
+	print('eps:', eps)
+	while (l1 < l0):
+		print('l1:', l1, 'l0:', l0, 'a:', a, 'b:', b)
 		a, b = grad(a, b, A, eps)
 		l0 = l1
 		l1 = L(a, b, A)
+	#print('l1:', l1, 'l0:', l0, 'a:', a, 'b:', b)
 
-'''
+#test
+import numpy as np
+a = [0.6730824145114183, 1.550551366406475]
+b = [1.3209155110513575, 4.505419254536786]
+
+print()
+print('A', np.array(A))
+print()
+print("A':", np.array([[x * y for y in b] for x in a]))
+
+
+
+
 
