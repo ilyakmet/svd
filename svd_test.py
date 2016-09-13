@@ -28,6 +28,7 @@ if __name__ == "__main__":
 	eps = 0.1
 	l1 = 1
 	l0 = 2
+	l2 = 1000
 
 	while (eps > 0) and (l1 != l0):
 		eps /= 2
@@ -39,6 +40,9 @@ if __name__ == "__main__":
 			a, b = grad(a, b, A, eps)
 			l0 = l1
 			l1 = L(a, b, A)
+		if (l0 < l2) and (l0 != 1000):
+			l2 = l0
+			eps_marker = eps
 		#print('l1:', l1, 'l0:', l0, 'a:', a, 'b:', b)
 
 
@@ -46,13 +50,16 @@ if __name__ == "__main__":
 
 	#test
 	import numpy as np
-	a = [0.6730824145114183, 1.550551366406475]
-	b = [1.3209155110513575, 4.505419254536786]
+	a = [0.673082414511689, 1.5505513664063575]
+	b = [1.3209155110944957, 4.505419254524138]
 
 	print()
 	print('A', np.array(A))
 	print()
 	print("A':", np.array([[x * y for y in b] for x in a]))
+
+	print(l2, eps_marker)
+
 
 
 
