@@ -26,8 +26,8 @@ if __name__ == "__main__":
 	a = [0, 1]
 	b = [3, 4]
 	eps = 0.1
-	l1 = 1
 	l0 = 2
+	l1 = 1
 	l2 = 1000
 
 	while (eps > 0) and (l1 != l0):
@@ -43,7 +43,6 @@ if __name__ == "__main__":
 		if (l0 < l2) and (l0 != 1000):
 			l2 = l0
 			eps_marker = eps
-		#print('l1:', l1, 'l0:', l0, 'a:', a, 'b:', b)
 
 
 
