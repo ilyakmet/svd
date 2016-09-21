@@ -1,3 +1,3 @@
-Approximation for A = a x b.transpose() | Only 2x2
+Approximation for A = a x b.transpose()
 
 Input your a, b and A in code.
