@@ -28,12 +28,12 @@ if __name__ == "__main__":
     a = [0, 1]
     b = [3, 4]
     eps = 0.2
+
+
     l0 = 2
     l1 = 1
     l2 = 1000
     eps_marker = eps
-
-
     while (eps > 0) and (l1 != l0):
         eps /= 2
         l0 = 1000
