@@ -24,6 +24,7 @@ def svd_by_vectors(a, b, A, eps):
 		l0 = 2
 		l1 = 1
 		l2 = 1000
+		a_l2, b_l2 = None, None
 		eps_marker = eps
 		while (eps > 0) and (l1 != l0):
 			eps /= 2
@@ -66,6 +67,6 @@ if __name__ == "__main__":
 	b = [3, 4]
 	eps = 0.2
 
-	print test(a, b, A, eps)
+	test(a, b, A, eps)
 
 
